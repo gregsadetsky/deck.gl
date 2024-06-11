@@ -164,12 +164,7 @@ export class CPUAggregator implements Aggregator {
   }
 
   /** Returns the information for a given bin. */
-  getBin(index: number):
-    | (AggregatedBin & {
-        /** List of data point indices that fall into this bin. */
-        points?: number[];
-      })
-    | null {
+  getBin(index: number): AggregatedBin | null {
     const bin = this.bins[index];
     if (!bin) {
       return null;
